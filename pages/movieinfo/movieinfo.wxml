@@ -1,0 +1,96 @@
+<!-- pages/movieinfo/movieinfo.wxml
+<text>pages/movieinfo/movieinfo.wxml</text> -->
+<view class="content">
+  <view class="movie_info">
+    <view class="main_pic">
+      <image src="/images/p2333752018隧道尽头.jpg" mode="" />
+    </view>
+    <view class="text_info">
+      <view class="title">回廊亭</view>
+      <view class="subtitle">REVIVAL</view>
+      <view class="short_comment">“任素汐刘敏涛化身恶女为爱复仇”</view>
+      <view class="classify">
+        犯罪 悬疑 爱情
+        <text>CGS 中国巨幕</text>
+        <text>CINITY 2D</text>
+      </view>
+      <view class="details">
+        2023.03.10 09:00中国大陆上映 100分钟 >
+      </view>
+      <view class="buttons">
+        <button style="width:200rpx;height:60rpx;padding:10rpx;font-size: 30rpx;">
+          <image src="/images/喜欢.png" mode="" /> 想看
+        </button>
+        <button style="width:200rpx;height:60rpx;padding:10rpx;font-size: 30rpx;">
+          <image src="/images/收藏.png" mode=""/> 看过
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="score">
+    <view class="scorehead">
+      <view>
+        <image src="/images/maoyan.png" mode=""/>
+        猫眼购票评分
+      </view>
+      <view>
+       1214,895人想看 78,803,000人看法 > 
+      </view>
+    </view>
+    <view class="score_content">
+      <view class="sc1">
+        <view class="sc_score">
+          9.3
+        </view>
+        <view class="sc_counts">
+          887,024人评
+        </view>
+      </view>
+      <view class="sc2">
+        <image src="/images/stars.png" mode=""/>
+        <view class="progress-box" style="margin: 5rpx;">
+          <progress percent="90" stroke-width="5" activeColor="rgb(141, 119, 106)" backgroundColor="rgb(94, 59, 47)"/>
+        </view>
+        <view class="progress-box">
+          <progress percent="5" stroke-width="5" activeColor="rgb(141, 119, 106)" backgroundColor="rgb(94, 59, 47)"/>
+        </view>
+        <view class="progress-box">
+          <progress percent="2" stroke-width="5" activeColor="rgb(141, 119, 106)" backgroundColor="rgb(94, 59, 47)"/>
+        </view>
+        <view class="progress-box">
+          <progress percent="2" stroke-width="5" activeColor="rgb(141, 119, 106)" backgroundColor="rgb(94, 59, 47)"/>
+        </view>
+        <view class="progress-box">
+          <progress percent="1" stroke-width="5" activeColor="rgb(141, 119, 106)" backgroundColor="rgb(94, 59, 47)"/>
+        </view>
+      </view>
+      <view class="sc3">
+        <view class="sc_top">
+          <view>
+            TOP
+          </view>
+          <view>
+            1
+          </view>
+        </view>
+        <view>
+          2023年2月
+        </view>
+        <view style="font-size: 23rpx; font-weight: bolder;">
+          中国大陆票房榜
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="intro">
+    <view class="intro_title">
+      简介
+    </view>
+    <view>
+      根据东野圭吾畅销小说《长长的回廊》改编。回廊亭大宅中暗藏无数秘密，绝望女人为爱复仇 ... <text>展开</text>
+    </view>
+  </view>
+</view>
+<view class="buy">
+  <button style="width:90%">15.9元起 特惠购票</button>
+</view>

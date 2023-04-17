@@ -1,0 +1,16 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<view bindtap="changename">
+  您好！{{username}}
+</view>
+<view bindtap="increasenumber">
+  数字：{{number}}
+</view>
+<view>
+  数组：{{arr[0]}}
+</view>
+<block wx:for="{{arr}}">
+  <view>
+    数组值：{{index}}--{{item}}
+  </view>  
+</block>

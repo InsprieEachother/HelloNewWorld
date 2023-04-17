@@ -1,0 +1,161 @@
+/* pages/movieinfo/movieinfo.wxss */
+page {
+  background-color: rgb(116, 34, 34);
+  color: rgb(207, 207, 207);
+}
+.content {
+  padding: 5%;
+  text-align: center;
+}
+.movie_info {
+  height: 300rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.main_pic {
+  width: 200rpx;
+  height: 300rpx;
+}
+image {
+  width: 100%;
+  height: 100%;
+}
+.text_info {
+  text-align: left;
+  width: 70%;
+}
+.text_info view {
+  margin: 10rpx;
+}
+.title {
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+.subtitle {
+  font-size: 25rpx;
+  font-weight: bolder;
+}
+.short_comment {
+  font-size: 25rpx;
+  color: gold;
+}
+.classify {
+  font-size: 25rpx;
+}
+.classify text {
+  background-color: rgb(0, 0, 0,0.2);
+  font-size: 20rpx;
+  margin: 0 10rpx;
+}
+.details {
+  font-size: 25rpx;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.buttons>button {
+  background-color: rgba(167, 167, 167, 0.363);
+  color: white;
+  border-radius: 20rpx;
+  font-weight: 300;
+}
+.buttons>button>image {
+  width: 30rpx;
+  height: 30rpx;
+}
+.score {
+  background-color: rgba(84, 46, 35, 0.685);
+  margin-top: 30rpx;
+  font-size: 25rpx;
+  height: 170rpx;
+  padding: 20rpx;
+}
+.scorehead {
+  display: flex;
+  justify-content: space-between;
+}
+.scorehead image {
+  width: 25rpx;
+  height: 25rpx;
+}
+.score_content {
+  display: flex;
+  justify-content: space-between;
+  height: 150rpx;
+  margin-top: 20rpx;
+}
+.sc1 {
+  width: 200rpx;
+  text-align: right;
+}
+.sc1>.sc_score {
+  color: gold;
+  font-weight: bolder;
+  font-size: 50rpx;
+  margin: 0 10rpx;
+}
+.sc1>.sc_counts {
+  font-size: 20rpx;
+}
+.sc2 {
+  width: 250rpx;
+  margin: 0 10rpx;
+}
+.sc2>image {
+  width: 80rpx;
+  height: 100rpx;
+  float: left;
+}
+.sc3 {
+  width: 300rpx;
+  color: burlywood;
+  height: 90rpx;
+  border: 1px solid burlywood;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-radius: 15rpx;
+  margin-top: 10rpx;
+  margin: 0 10rpx;
+}
+.sc_top {
+  float: left;
+  font-weight: bolder;
+  background-color: rgb(120, 78, 53);
+  width: 60rpx;
+  height: 70rpx;
+}
+.progress-box {
+  margin: 13rpx 0;
+}
+.intro {
+  text-align: left;
+  margin: 30rpx 0;
+  line-height: 50rpx;
+}
+.intro_title {
+  font-weight: bolder;
+  font-size: 40rpx;
+}
+.intro text {
+  opacity: 0.4;
+}
+.buy {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  align-items: center;
+}
+.buy>button {
+  background-color: rgb(253, 46, 81);
+  height: 70%;
+  border-radius: 40rpx;
+  color: white;
+  font-weight: 300;
+}

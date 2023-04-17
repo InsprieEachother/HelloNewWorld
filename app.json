@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/mypage/mypage",
+    "pages/test/test",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/movieinfo/movieinfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/mypage/mypage",
+        "text": "首页",
+        "iconPath": "/images/猫猫出售.png",
+        "selectedIconPath": "/images/猫猫出售_red.png"
+      },{
+        "pagePath": "pages/index/index",
+        "text": "电影/影院",
+        "iconPath": "/images/电影.png",
+        "selectedIconPath": "/images/电影_red.png"
+      },{
+        "pagePath": "pages/test/test",
+        "text": "我的",
+        "iconPath": "/images/我的.png",
+        "selectedIconPath": "/images/我的_red.png"
+      }
+    ]
+  },
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

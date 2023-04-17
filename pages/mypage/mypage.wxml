@@ -1,0 +1,168 @@
+<!-- pages/mypage/mypage.wxml -->
+<!-- <text>pages/mypage/mypage.wxml</text> -->
+
+<wxs module="m1">
+  //ver接收版本值，以"/"作为分割，取第一部分返回
+  var getVer = function (ver) {
+    if (ver.indexOf("/") != -1) {
+      return ver.split("/")[0];
+    } else {
+      return "";
+    }
+  }
+  //num接收人数值，除以10000后输出
+  var getNum = function (num) {
+    if (num > 10000) {
+      num = (num / 10000).toFixed(1);
+    }
+    return num;
+  }
+  //bsc接收按钮的状态显示文字，如果存在值则返回该值，如果未定义则返回“想看”
+  var getButtonContent = function (bsc) {
+    if (bsc != undefined) {
+      return bsc;
+    } else {
+      return "想看";
+    }
+  }
+  //time接收时间，并返回在空格前的部分
+  var getTime = function (time) {
+    return time.split(" ")[0];
+  }
+  module.exports = {
+    getVer: getVer,
+    getNum: getNum,
+    getButtonContent:getButtonContent,
+    getTime:getTime
+  }
+</wxs>
+
+
+<!-- 头部导航 -->
+<scroll-view class="scroll_list" scroll-x="{{true}}" enhanced:show-scrollbar="false">
+  <view style="font-weight: bolder;">
+    推荐
+  </view>
+  <view bindtap="onunderline">
+    天空之城
+  </view>
+  <view>
+    回廊亭
+  </view>
+  <view>
+    热片解读
+  </view>
+  <view>
+    新片预告
+  </view>
+  <view>
+    速看电影
+  </view>
+  <view>
+    剧集综艺
+  </view>
+</scroll-view>
+<view class="adimage">
+  <swiper indicator-dots="true" autoplay="true" circular="true" interval="2000" duration="500" previous-margin="0" next-margin="0" indicator-active-color="red" indicator-color="white" style="height: 200rpx;">
+    <block wx:for="{{ad_img}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" mode="" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="navgroups">
+  <scroll-view class="navgroup1" scroll-x="{{true}}" enhanced:show-scrollbar="false">
+    <block wx:for="{{ad_img2}}" wx:key="unique">
+      <view class="navgroup1_items">
+        <image src="{{item.img}}"></image>
+        <view>{{item.name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 导航栏第二排 -->
+  <scroll-view class="navgroup2" scroll-x="{{true}}" enhanced:show-scrollbar="false">
+    <view class="navgroup2_items">
+      <view>省钱月卡</view>
+      <view>观影立减</view>
+      <image src="/images/喵.png"></image>
+    </view>
+    <view class="navgroup2_items">
+      <view>省钱月卡</view>
+      <view>观影立减</view>
+      <image src="/images/喵.png"></image>
+      <image src="/images/hot.png" class="hot"></image>
+    </view>
+    <view class="navgroup2_items">
+      <view>省钱月卡</view>
+      <view>观影立减</view>
+      <image src="/images/喵.png"></image>
+    </view>
+    <view class="navgroup2_items">
+      <view>省钱月卡</view>
+      <view>观影立减</view>
+      <image src="/images/喵.png"></image>
+    </view>
+    <view class="navgroup2_items">
+      <view>省钱月卡</view>
+      <view>观影立减</view>
+      <image src="/images/喵.png"></image>
+    </view>
+    <view class="navgroup2_items">
+      <view>省钱月卡</view>
+      <view>观影立减</view>
+      <image src="/images/喵.png"></image>
+    </view>
+    <view class="navgroup2_items">
+      <view>省钱月卡</view>
+      <view>观影立减</view>
+      <image src="/images/喵.png"></image>
+    </view>
+  </scroll-view>
+</view>
+<!-- 正在热映 -->
+<!-- https://m.maoyan.com/ajax/movieOnInfoList?ci=59 -->
+<view class="movieNow">
+  <view class="movieNow_title">
+    <view>正在热映</view>
+    <rich-text>全部{{hot_total}}部 ></rich-text>
+  </view>
+  <scroll-view class="movieNow_itembox" scroll-x="{{true}}" enhanced:show-scrollbar="false">
+    <block wx:for="{{hot_movieList}}" wx:key="unique">
+      <view class="movieNow_items">
+        <view class="movieNow_image" ontap="onTapMovieNowItem">
+          <image src="{{item.img}}"></image>
+          <text class="movietype">{{item.version}}</text>
+          <text wx:if="{{item.sc>0}}" class="moviescore">{{item.sc}}分</text>
+          <text wx:else="{{item.sc==0}}" class="moviescore" style="color:white">{{m1.getNum(item.wish)}}万想看</text>
+        </view>
+        <view>{{item.nm}}</view>
+        <button wx:if="{{item.showStateButton.content == '购票'}}" style="width:100rpx;height:40rpx;line-height:1.6;background-color: {{item.showStateButton.color}}">购票</button>
+        <button wx:if="{{item.showStateButton.content == '预售'}}" style="width:100rpx;height:40rpx;line-height:1.6;background-color: {{item.showStateButton.color}};">预售</button>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 待映推荐 -->
+<!-- https://api.maoyan.com/mmdb/movie/v1/list/wish/order/coming.json?ci=59 -->
+<view class="movieNow ready">
+  <view class="movieNow_title">
+    <view id="movieList2_title">待映推荐<rich-text bindtap="onTapListSwitch">| 即将上映</rich-text>
+    </view>
+    <rich-text>全部{{holding_total}}部 ></rich-text>
+  </view>
+  <scroll-view class="movieNow_itembox" scroll-x="{{true}}" enhanced:show-scrollbar="false">
+    <block wx:for="{{holding_movieList}}" wx:key="unique">
+      <view class="movieNow_items">
+        <view class="movieNow_image">
+          <image src="{{item.img}}"></image>
+          <text class="movietype">{{m1.getVer(item.ver)}}</text>
+          <text class="moviescore">{{m1.getNum(item.wish)}}万想看</text>
+        </view>
+        <view>{{item.nm}}</view>
+        <view>{{m1.getTime(item.comingTitle)}}</view>
+        <button style="width:100rpx;height:40rpx;line-height:1.6;background-color: {{item.showStateButton.color}};">{{m1.getButtonContent(item.showStateButton.content)}}</button>
+      </view>
+    </block>
+  </scroll-view>
+</view>
